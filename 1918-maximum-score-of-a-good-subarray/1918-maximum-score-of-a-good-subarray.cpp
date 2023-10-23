@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int maximumScore(std::vector<int>& nums, int k) {
+    int maximumScore(vector<int>& nums, int k) {
         int left = k, right = k;
         int min_val = nums[k];
         int max_score = min_val;
@@ -11,8 +11,8 @@ public:
             } else {
                 left--;
             }
-            min_val = std::min(min_val, std::min(nums[left], nums[right]));
-            max_score = std::max(max_score, min_val * (right - left + 1));
+            min_val = min(min_val,min(nums[left], nums[right]));
+            max_score = max(max_score, min_val * (right - left + 1));
         }
         
         return max_score;
